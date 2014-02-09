@@ -9,7 +9,7 @@ This bundle depends on [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/
 ``` json
 {
     "require": {
-        "cypresslab/angular-ng-routing-bundle": "@stable"
+        "cypresslab/angular-ng-routing-bundle": "@dev"
     }
 }
 ```
