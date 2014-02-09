@@ -26,14 +26,14 @@ Follow the [docs of FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJ
 
 You will add, at some point in your views, something like:
 
-``` html
+``` html+jinja
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
 ```
 
 Just add these two more lines
 
-``` html
+``` html+jinja
 <script src="{{ asset('bundles/cypressangularngrouting/ng-router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', {"callback": "cypress.NgRouter.setData"}) }}"></script>
 ```
