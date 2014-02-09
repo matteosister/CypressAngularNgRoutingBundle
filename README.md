@@ -1,5 +1,7 @@
 #AngularNgRoutingBundle
 
+[![Build Status](https://travis-ci.org/matteosister/CypressAngularNgRoutingBundle.png?branch=master)](https://travis-ci.org/matteosister/CypressAngularNgRoutingBundle)
+
 A Symfony2 bundle to expose your routing in [Angular.js resource format](http://docs.angularjs.org/api/ngResource.$resource)
 
 This bundle depends on [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
