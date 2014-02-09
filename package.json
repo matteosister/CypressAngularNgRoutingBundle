@@ -1,0 +1,27 @@
+{
+  "name": "CypressAngularNgRoutingBundle",
+  "version": "0.0.1",
+  "description": "A Symfony2 bundle to expose your routing in [Angular.js resource format](http://docs.angularjs.org/api/ngResource.$resource)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/matteosister/CypressAngularNgRoutingBundle.git"
+  },
+  "author": "",
+  "license": "LGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/matteosister/CypressAngularNgRoutingBundle/issues"
+  },
+  "homepage": "https://github.com/matteosister/CypressAngularNgRoutingBundle",
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.10.0",
+    "grunt-contrib-jasmine": "~0.6.1",
+    "grunt": "~0.4.2"
+  },
+  "dependencies": {
+    "grunt-notify": "~0.2.17"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}

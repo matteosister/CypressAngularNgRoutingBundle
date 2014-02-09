@@ -1,3 +1,5 @@
+'use strict'
+
 window.cypress = {}
 
 class cypress.Route
