@@ -13,6 +13,10 @@
       return this.data = data;
     };
 
+    Route.prototype.setDefaultHost = function(defaultHost) {
+      return this.defaultHost = defaultHost;
+    };
+
     Route.prototype.getResource = function() {
       var out;
       out = '';
@@ -28,6 +32,8 @@
     Route.prototype.getHost = function() {
       if (this.data.hosttokens.length > 0) {
         return this.extractTokens(this.data.hosttokens);
+      } else {
+        return this.defaultHost;
       }
     };
 
@@ -81,6 +87,7 @@
         route = new cypress.Route();
         route.setName(key);
         route.setData(configs.routes[key]);
+        route.setDefaultHost(this.host);
         _results.push(this.routes.push(route));
       }
       return _results;

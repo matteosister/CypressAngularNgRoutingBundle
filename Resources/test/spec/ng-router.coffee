@@ -55,4 +55,12 @@ describe 'cypress.Route', ->
             route.setData {defaults: {}, tokens: [token, tokenText]}
             expect(route.getResource()).not.toBe '/'
 
+    describe 'getHost', ->
+        it 'should respond a tokenized host', ->
+            route.setData {defaults: {}, hosttokens: [token]}
+            expect(route.getHost()).toBe '.:_format'
 
+        it 'should respond a default host without tokens', ->
+            route.setData {defaults: {}, hosttokens: []}
+            route.setDefaultHost 'test.dev'
+            expect(route.getHost()).toBe 'test.dev'

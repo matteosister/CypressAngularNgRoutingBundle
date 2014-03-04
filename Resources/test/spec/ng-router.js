@@ -70,7 +70,7 @@
         return expect(route.extractTokens([token, tokenText])).toEqual('test.:_format');
       });
     });
-    return describe('getResource', function() {
+    describe('getResource', function() {
       it('should respond / without tokens', function() {
         route.setData({});
         return expect(route.getResource()).toBe('/');
@@ -81,6 +81,23 @@
           tokens: [token, tokenText]
         });
         return expect(route.getResource()).not.toBe('/');
+      });
+    });
+    return describe('getHost', function() {
+      it('should respond a tokenized host', function() {
+        route.setData({
+          defaults: {},
+          hosttokens: [token]
+        });
+        return expect(route.getHost()).toBe('.:_format');
+      });
+      return it('should respond a default host without tokens', function() {
+        route.setData({
+          defaults: {},
+          hosttokens: []
+        });
+        route.setDefaultHost('test.dev');
+        return expect(route.getHost()).toBe('test.dev');
       });
     });
   });

@@ -9,6 +9,9 @@ class cypress.Route
     setData: (data) ->
         @data = data
 
+    setDefaultHost: (defaultHost) ->
+        @defaultHost = defaultHost
+
     getResource: ->
         out = ''
         if @data.tokens?
@@ -20,6 +23,8 @@ class cypress.Route
     getHost: ->
         if @data.hosttokens.length > 0
             @extractTokens(@data.hosttokens)
+        else
+            @defaultHost
 
     extractTokens: (tokens = []) ->
         out = ''
@@ -51,6 +56,7 @@ class cypress.NgRouter
             route = new cypress.Route()
             route.setName key
             route.setData configs.routes[key]
+            route.setDefaultHost @host
             @routes.push route
 
     generateResourceUrl: (routeName) ->

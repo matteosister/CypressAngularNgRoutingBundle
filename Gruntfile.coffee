@@ -19,6 +19,11 @@ module.exports = (grunt) ->
                 files:
                     'Resources/test/src/ng-router.js': ['Resources/coffee/ng-router.coffee']
                     'Resources/test/spec/ng-router.js': ['Resources/test/spec/ng-router.coffee']
+            dist:
+                options:
+                    sourceMap: false
+                files:
+                    'Resources/public/ng-router.js': ['Resources/coffee/ng-router.coffee']
 
         jasmine:
             ng_router:
