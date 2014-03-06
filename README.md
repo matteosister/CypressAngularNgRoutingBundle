@@ -11,7 +11,7 @@ This bundle depends on [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/
 ``` json
 {
     "require": {
-        "cypresslab/angular-ng-routing-bundle": "@dev"
+        "cypresslab/angular-ng-routing-bundle": "~1.0"
     }
 }
 ```
