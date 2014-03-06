@@ -17,5 +17,10 @@
     "autoload": {
         "psr-0": { "Cypress\\AngularNgRoutingBundle": "" }
     },
-    "target-dir": "Cypress/AngularNgRoutingBundle"
+    "target-dir": "Cypress/AngularNgRoutingBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
