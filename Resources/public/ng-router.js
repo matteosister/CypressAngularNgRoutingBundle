@@ -93,11 +93,18 @@
       return _results;
     };
 
-    NgRouter.prototype.generateResourceUrl = function(routeName) {
+    NgRouter.prototype.generateResourceUrl = function(routeName, absolute) {
       var host, path, _ref, _ref1;
+      if (absolute == null) {
+        absolute = true;
+      }
       path = (_ref = this.findRoute(routeName)) != null ? _ref.getResource() : void 0;
-      host = (_ref1 = this.findRoute(routeName)) != null ? _ref1.getHost() : void 0;
-      return "" + cypress.NgRouter.scheme + "://" + host + cypress.NgRouter.baseUrl + path;
+      if (absolute) {
+        host = (_ref1 = this.findRoute(routeName)) != null ? _ref1.getHost() : void 0;
+        return "" + cypress.NgRouter.scheme + "://" + host + cypress.NgRouter.baseUrl + path;
+      } else {
+        return path;
+      }
     };
 
     NgRouter.prototype.findRoute = function(routeName) {

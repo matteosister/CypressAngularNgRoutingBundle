@@ -59,10 +59,13 @@ class cypress.NgRouter
             route.setDefaultHost @host
             @routes.push route
 
-    generateResourceUrl: (routeName) ->
+    generateResourceUrl: (routeName, absolute = true) ->
         path = @findRoute(routeName)?.getResource()
-        host = @findRoute(routeName)?.getHost()
-        "#{cypress.NgRouter.scheme}://#{host}#{cypress.NgRouter.baseUrl}#{path}"
+        if absolute
+            host = @findRoute(routeName)?.getHost()
+            return "#{cypress.NgRouter.scheme}://#{host}#{cypress.NgRouter.baseUrl}#{path}"
+        else
+            return path
 
     findRoute: (routeName) ->
         matchedRoute = null

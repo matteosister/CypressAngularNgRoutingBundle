@@ -27,7 +27,7 @@ module.exports = (grunt) ->
 
         jasmine:
             ng_router:
-                src: 'Resources/test/src/*.js'
+                src: ['node_modules/underscore/underscore.js', 'Resources/test/src/*.js']
                 options:
                     specs: 'Resources/test/spec/*.js'
 
@@ -38,3 +38,4 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'default', ['test']
     grunt.registerTask 'test', ['coffee', 'jasmine']
+    grunt.registerTask 'release', ['coffee:dist']

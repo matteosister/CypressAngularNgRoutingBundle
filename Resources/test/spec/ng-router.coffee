@@ -64,3 +64,54 @@ describe 'cypress.Route', ->
             route.setData {defaults: {}, hosttokens: []}
             route.setDefaultHost 'test.dev'
             expect(route.getHost()).toBe 'test.dev'
+
+describe 'cypress.NgRouter', ->
+    ngRouter = null
+    baseData = {}
+    aRoute =
+        test: {
+            tokens: [
+                [
+                    "variable",
+                    "/",
+                    "[^/\.]++",
+                    "id"
+                ],
+                [
+                    "text",
+                    "/test"
+                ]
+            ],
+            defaults: {},
+            requirements: {
+                _method: "GET",
+                _format: "json|jsonp|xml|html"
+            },
+            hosttokens: [ ]
+        },
+    beforeEach ->
+        ngRouter = new cypress.NgRouter()
+        baseData =
+            base_url: '/base_url'
+            prefix: 'prefix'
+            host: 'host'
+            scheme: 'scheme'
+            routes: aRoute
+        cypress.NgRouter.setData baseData
+
+    it 'should have a findRoute method', ->
+        expect(ngRouter.findRoute).toBeDefined()
+
+    it 'should match routes by name', ->
+        expect(ngRouter.findRoute('non_existent')).toBeNull()
+        expect(ngRouter.findRoute('test')).not.toBeNull()
+
+    it 'should generate a route by its name', ->
+        expect(ngRouter.generateResourceUrl('test')).toBe('scheme://host/base_url/test/:id')
+
+    it 'should generate a route by its name, without the absolute path', ->
+        expect(ngRouter.generateResourceUrl('test', false)).toBe('/test/:id')
+
+    it 'should have a generateResourceUrl method', ->
+        expect(ngRouter.generateResourceUrl).toBeDefined()
+
