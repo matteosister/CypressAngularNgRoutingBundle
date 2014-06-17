@@ -103,7 +103,7 @@
         host = (_ref1 = this.findRoute(routeName)) != null ? _ref1.getHost() : void 0;
         return "" + cypress.NgRouter.scheme + "://" + host + cypress.NgRouter.baseUrl + path;
       } else {
-        return path;
+        return "" + cypress.NgRouter.baseUrl + path;
       }
     };
 

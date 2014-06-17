@@ -110,7 +110,7 @@ describe 'cypress.NgRouter', ->
         expect(ngRouter.generateResourceUrl('test')).toBe('scheme://host/base_url/test/:id')
 
     it 'should generate a route by its name, without the absolute path', ->
-        expect(ngRouter.generateResourceUrl('test', false)).toBe('/test/:id')
+        expect(ngRouter.generateResourceUrl('test', false)).toBe('/base_url/test/:id')
 
     it 'should have a generateResourceUrl method', ->
         expect(ngRouter.generateResourceUrl).toBeDefined()

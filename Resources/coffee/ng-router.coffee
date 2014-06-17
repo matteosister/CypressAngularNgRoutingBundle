@@ -65,7 +65,7 @@ class cypress.NgRouter
             host = @findRoute(routeName)?.getHost()
             return "#{cypress.NgRouter.scheme}://#{host}#{cypress.NgRouter.baseUrl}#{path}"
         else
-            return path
+            return "#{cypress.NgRouter.baseUrl}#{path}"
 
     findRoute: (routeName) ->
         matchedRoute = null
