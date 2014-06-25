@@ -36,7 +36,7 @@ class DumpCommand extends FOSDumpCommand
                 null,
                 InputOption::VALUE_REQUIRED,
                 'Callback function to pass the routes as an argument.',
-                'fos.NgRouter.setData'
+                'cypress.NgRouter.setData'
             )
             ->addOption(
                 'target',
